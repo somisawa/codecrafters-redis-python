@@ -10,7 +10,7 @@ def main():
     #
     server_socket = socket.create_server(("localhost", 6379), reuse_port=True)
     conn, addr = server_socket.accept() # wait for client
-    conn.send("+PONG\r\n")
+    conn.send("+PONG\r\n".encode("utf-8"))
 
 
 if __name__ == "__main__":
